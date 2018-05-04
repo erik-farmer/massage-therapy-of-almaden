@@ -1,11 +1,11 @@
-import datetime
 from django.db import models
 from django.utils.timezone import now
 from ckeditor.fields import RichTextField
 
 
 class BlogPost(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
     body = RichTextField()
     published = models.BooleanField(default=False)
     created_at = models.DateField(default=now)
