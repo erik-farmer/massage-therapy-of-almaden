@@ -32,9 +32,13 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'ckeditor',
+]
 
-PROJECT_APPS = []
+PROJECT_APPS = [
+    'massage_therapy_of_almaden.blog',
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
@@ -107,3 +111,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
