@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+PROJECT_DIR = BASE_DIR / 'massage_therapy_of_almaden'
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,6 +40,7 @@ THIRD_PARTY_APPS = [
 
 PROJECT_APPS = [
     'massage_therapy_of_almaden.blog',
+    'massage_therapy_of_almaden.info',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [PROJECT_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -113,6 +115,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    PROJECT_DIR / 'static'
+]
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATIC_ROOT = str(BASE_DIR / 'massage_therapy_of_almaden' / 'staticfiles')
 
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
