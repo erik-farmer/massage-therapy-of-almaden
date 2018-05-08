@@ -24,7 +24,8 @@ CACHES = {
 }
 
 SECURE_SSL_REDIRECT = True
-
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+SESSION_COOKIE_SECURE = True
 ALLOWED_HOSTS = ['.herokuapp.com']
+
 DEFENDER_REDIS_URL = REDIS_URL
