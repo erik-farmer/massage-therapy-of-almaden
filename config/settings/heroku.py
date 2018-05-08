@@ -9,8 +9,7 @@ DATABASES = {
 
 DEBUG = False
 REDIS_URL = os.environ.get('REDIS_URL')
-
-SECRET_KEY = secrets.token_urlsafe(50)
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 CACHES = {
     "default": {
