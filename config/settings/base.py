@@ -35,7 +35,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'ckeditor',
-    'defender',
+    # 'defender',
 ]
 
 PROJECT_APPS = [
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'defender.middleware.FailedLoginMiddleware',
+    # 'defender.middleware.FailedLoginMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
