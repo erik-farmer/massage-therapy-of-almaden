@@ -1,10 +1,14 @@
 from .base import *
 import secrets
 import os
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600)
+}
 
 DEBUG = False
 REDIS_URL = os.environ.get('REDIS_URL')
-
 
 SECRET_KEY = secrets.token_urlsafe(50)
 
@@ -19,8 +23,7 @@ CACHES = {
     }
 }
 
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+ALLOWED_HOSTS = ['.herokuapp.com']
 DEFENDER_REDIS_URL = REDIS_URL
-
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
