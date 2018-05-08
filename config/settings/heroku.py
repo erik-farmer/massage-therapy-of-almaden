@@ -23,7 +23,8 @@ CACHES = {
     }
 }
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+SECURE_SSL_REDIRECT = True
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 ALLOWED_HOSTS = ['.herokuapp.com']
 DEFENDER_REDIS_URL = REDIS_URL
