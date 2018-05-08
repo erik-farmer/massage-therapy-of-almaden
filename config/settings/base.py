@@ -142,15 +142,9 @@ LOGGING = {
             'class': 'logging.NullHandler',
         },
         'console': {
-            'level': 'DEBUG',
+            'level': 'ERROR',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
-        }
-    },
-    'loggers': {
-        'testlogger': {
-            'handlers': ['console'],
-            'level': 'INFO',
         }
     }
 }
