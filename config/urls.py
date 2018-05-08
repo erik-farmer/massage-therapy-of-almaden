@@ -19,8 +19,8 @@ from massage_therapy_of_almaden.info.views import HomePageView
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('admin/defender/', include('defender.urls')), # defender admin
+    path('blog-author/', admin.site.urls),
+    path('blog-author/defender/', include('defender.urls')), # defender admin
     path('', HomePageView.as_view(), name='home'),
     path('blog/', include('massage_therapy_of_almaden.blog.urls')),
 ]
